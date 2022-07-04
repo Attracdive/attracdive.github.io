@@ -49,13 +49,14 @@ layout: compress
           {% if page.date %}
           <div class="post-meta">
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%b %d, %Y" }}
+              <!-- {{ page.date | date: "%b %d, %Y" }} -->
+              {{ page.date | date: "%Y-%m-%d, %h:%m:%s" }}
             </time>
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name">{{ site.author.name }}</span>
             </span>
             <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.date | date: "%b %d, %Y" }}
+              {{ page.date | date: "%Y-%m-%d" }}
             </time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
